@@ -1,0 +1,9 @@
+ultralytics==8.4.163
+paddleocr==3.7.0
+paddlex==3.7.2
+swanlab==0.10.2
+Pillow
+opencv-python-headless
+numpy
+Flask>=3.0,<4
+# Reuse the existing GPU environment; install torch/PaddlePaddle separately for your hardware.

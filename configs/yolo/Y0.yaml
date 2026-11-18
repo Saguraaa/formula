@@ -1,0 +1,5 @@
+data: datasets_oriented/yolo/data.yaml
+name: Y0
+epochs: 30
+batch: 8
+imgsz: 640

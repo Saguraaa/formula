@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>算式工作台 · 识别与批改</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header><div class="brand"><span class="mark">＝</span> 算式工作台 <span class="edition">{{ 'CLOUD LAB' if cloud else 'LOCAL LAB' }}</span></div><span class="local"><i></i> {{ '云端运行 · 图片上传至此应用处理' if cloud else '本地运行 · 图片留在本机' }}</span></header>
+  <main>
+    <div class="intro"><div><p class="eyebrow">WORKSHEET REVIEW</p><h1>从一张作业，到每一道算式。</h1><p class="muted">拖入图片，查看检测裁图、文字识别与计算结果。</p></div><div class="model"><span>当前模型组合</span><strong>YOLO Y2-geometry-2 <b>＋</b> OCR O3</strong><small>统一重训 · 完整裁图识别</small></div></div>
+    <section class="upload-panel">
+      <button class="drop" id="drop" type="button"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 16V3m-5 5 5-5 5 5M4 15v5h16v-5"/></svg><span><strong id="file-label">将算式图片拖到这里，或点击选择</strong><small>JPG / PNG / WEBP · 最大 20 MB</small></span><span class="choose">选择图片</span></button>
+      <input type="file" id="file" accept="image/jpeg,image/png,image/webp" hidden>
+      <button id="run" class="primary" disabled>开始识别 <span aria-hidden="true">↗</span></button>
+    </section>
+    <p id="message" role="status" aria-live="polite">选择图片后开始识别。首次运行需要加载模型，请耐心等待。</p>
+    <section class="stats" aria-label="识别统计"><div><span>检测到的算式</span><strong id="total">—</strong></div><div><span><i class="dot correct"></i>计算正确</span><strong id="correct">—</strong></div><div><span><i class="dot incorrect"></i>计算错误</span><strong id="incorrect">—</strong></div><div><span><i class="dot uncertain"></i>待确认</span><strong id="uncertain">—</strong></div></section>
+    <div class="workspace">
+      <section class="panel preview-panel"><div class="panel-head"><h2><span>01</span> 原图与检测位置</h2><a id="original-link" target="_blank" rel="noopener" hidden>查看原图 ↗</a></div><div id="preview" class="preview"><div class="empty"><span class="placeholder-symbol">▧</span><strong>你的作业图片会显示在这里</strong><p>每个检测框都对应右侧的同编号裁图</p></div></div><p class="panel-foot">绿色：正确　红色：错误　橙色：待确认</p></section>
+      <section class="panel results-panel"><div class="panel-head"><h2><span>02</span> 裁图与识别结果</h2><a id="download" hidden>下载全部结果 ↓</a></div><div class="filters" aria-label="筛选判题结果"><button class="active" data-filter="all" aria-pressed="true">全部</button><button data-filter="incorrect" aria-pressed="false">计算错误</button><button data-filter="uncertain" aria-pressed="false">待确认</button><button data-filter="correct" aria-pressed="false">计算正确</button><span id="timing"></span></div><div id="results" class="results"><div class="empty"><span class="placeholder-symbol">∑</span><strong>让每一步识别都看得见</strong><p>完整裁图、OCR 原文与判定逐项对应</p></div></div></section>
+    </div>
+    <footer>判题依据 OCR 识别文字；识别有误时可能影响结果。未作答、不支持的算式或无法解析的内容会标为「待确认」。</footer>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>

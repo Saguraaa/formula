@@ -1,0 +1,12 @@
+# Reuse Y1 appearance augmentation; apply native geometry during training.
+# Keep historical Y2 (offline rotation) and its results separate.
+data: experiment_data/Y1/yolo.yaml
+name: Y2-geometry
+epochs: 30
+batch: 8
+imgsz: 640
+degrees: 3.0
+translate: 0.03
+scale: 0.1
+shear: 3.0
+perspective: 0.0002

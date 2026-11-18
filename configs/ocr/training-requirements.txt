@@ -1,0 +1,13 @@
+albumentations==2.0.8
+albucore==0.0.24
+scikit-image==0.26.0
+scipy==1.18.1
+networkx==3.7
+cython==3.3.1
+lmdb==3.0.0
+rapidfuzz==3.14.6
+imageio==2.38.1
+tifffile==2026.10.15
+lazy-loader==0.6
+simsimd==6.5.16
+stringzilla==5.3.2

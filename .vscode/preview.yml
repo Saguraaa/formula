@@ -1,0 +1,9 @@
+autoOpen: true
+apps:
+  - name: 算式工作台
+    root: ./
+    port: 7860
+    run: bash deploy/start-cloud.sh
+    autoOpen: true
+    autoPreview: true
+    mainPort: true

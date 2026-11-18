@@ -1,0 +1,7 @@
+group: O3-geometry
+train_data: experiment_data/O3-geometry/ocr
+geometry:
+  seed: 42
+  probability: 0.5
+  rotation_degrees: 3.0
+  perspective_fraction: 0.03

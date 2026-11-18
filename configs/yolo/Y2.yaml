@@ -1,0 +1,5 @@
+data: experiment_data/Y2/yolo.yaml
+name: Y2
+epochs: 30
+batch: 8
+imgsz: 640

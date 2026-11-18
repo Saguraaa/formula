@@ -1,0 +1,30 @@
+{
+  "detector": "Y2-geometry-2",
+  "ocr": "ocr-controlled-v1/O3",
+  "files": [
+    {
+      "path": "models/yolo/best.pt",
+      "source": "runs/Y2-geometry-2/weights/best.pt",
+      "bytes": 5453850,
+      "sha256": "231f4cf814235b2fdaeefe393b755722b1482945c2ff151e57d05f849a7f933b"
+    },
+    {
+      "path": "models/ocr/inference.json",
+      "source": "runs/ocr-controlled-v1/O3/inference/inference.json",
+      "bytes": 221814,
+      "sha256": "e51ca90dfb5df9c2cd012e4d831fce4694d9d357b76cb73f44ba3d4109ebd3a1"
+    },
+    {
+      "path": "models/ocr/inference.pdiparams",
+      "source": "runs/ocr-controlled-v1/O3/inference/inference.pdiparams",
+      "bytes": 76465087,
+      "sha256": "a862676d2061da63f383a1ddfc74b38ede2e44f7e674c884f5be6481b34babfe"
+    },
+    {
+      "path": "models/ocr/inference.yml",
+      "source": "runs/ocr-controlled-v1/O3/inference/inference.yml",
+      "bytes": 169331,
+      "sha256": "9beddce74c8863aa08a341c9becf7f35d994df987a67601d8401309e5c9c313b"
+    }
+  ]
+}
