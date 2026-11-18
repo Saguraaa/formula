@@ -8,6 +8,8 @@
 4. 首次启动会创建独立环境并安装依赖，需要访问 PyPI 和 PyTorch 官方 CPU 下载源；以后配置未变化会复用环境。如果提示缺少 venv，请在环境中安装 python3-venv。
 5. 等待启动日志出现 `Listening at: http://0.0.0.0:7860`，回到应用管理打开应用，即进入算式工作台。首次识别需加载权重。
 
+如果日志提示 `PDFReaderBackend ... opencv-contrib-python`，请重新拉取最新提交并重启应用；PaddleX 会按发行包名称检查这个依赖，CPU 模式也需要它。不要在启动脚本中把它替换成 `opencv-python-headless`。
+
 手动启动与配置中的启动方式一致：
 
 ```bash

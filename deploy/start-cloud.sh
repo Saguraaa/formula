@@ -18,9 +18,6 @@ if [[ ! -f .cloud-venv/.requirements-sha ]] || [[ "$(cat .cloud-venv/.requiremen
   "$PY" -m pip install --upgrade pip
   "$PY" -m pip install torch==2.14.0 torchvision==0.29.0 --index-url https://download.pytorch.org/whl/cpu
   "$PY" -m pip install -r requirements-cloud.txt
-  # Ultralytics pulls the GUI OpenCV wheel; server instances need only headless.
-  "$PY" -m pip uninstall -y opencv-python opencv-contrib-python
-  "$PY" -m pip install --force-reinstall --no-deps opencv-python-headless
   printf '%s' "$fingerprint" > .cloud-venv/.requirements-sha
 fi
 "$PY" deploy/check_models.py

@@ -7,4 +7,6 @@ paddlex==3.7.2
 paddlepaddle==3.2.2
 Pillow==12.3.0
 numpy==2.2.6
-opencv-python-headless
+# PaddleX checks this distribution name when it builds the TextRecognition reader.
+# It works headlessly on Linux; do not replace it with opencv-python-headless.
+opencv-contrib-python==4.10.0.84
