@@ -17,6 +17,7 @@ fingerprint="$(cat requirements-cloud.txt deploy/start-cloud.sh | sha256sum | cu
 if [[ ! -f .cloud-venv/.requirements-sha ]] || [[ "$(cat .cloud-venv/.requirements-sha)" != "$fingerprint" ]]; then
   "$PY" -m pip install --upgrade pip
   "$PY" -m pip install torch==2.14.0 torchvision==0.29.0 --index-url https://download.pytorch.org/whl/cpu
+  "$PY" -m pip uninstall -y opencv-python-headless opencv-python || true
   "$PY" -m pip install -r requirements-cloud.txt
   printf '%s' "$fingerprint" > .cloud-venv/.requirements-sha
 fi
